@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Login Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+
+<body>
+<div class = "cont1">
+ <h1>LUMIN<span class = "AI">(AI)</span>RE ANALYTICS SUITE<sup>TM</sup></h1>
+</div>
+	<div class="login_div">
+	<form action="" method = "post" class="login_form">
+		{% if error %}
+		<p class="error"> {{ error }} </p>
+		{% endif %}
+			<br><br><br>
+		Username:
+		<input class = "inputs" type="text" name="username" value="{{
+          request.form.username }}" required>
+	<br><br>
+		Password:&nbsp; 
+		<input class = "inputs" type="password" name="password" value="{{ request.form.password }}" required>
+	<br><br><br><br>
+		<input class = "btn" type="submit" align = "right" value="LOG IN">
+		</form>
+</div>	
+</body>
+</html>

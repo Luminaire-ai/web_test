@@ -1,0 +1,111 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+.AI {
+	color: red;
+}
+sup{
+		font-size: 14px;
+		
+	}
+.navbar {
+    overflow: hidden;
+    height: 150px;
+    background-color: rgba(6, 2, 102, 1);
+    position: absolute; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+	color: white;
+	font-size: 30px;
+}
+
+/* Links inside the navbar */
+
+
+/* Change background on mouse-over */
+
+/* Main content */
+.main {
+    margin-top: 150px; /* Add a top margin to avoid content overlay */
+	background-image: url("img/u14.jpg");
+	height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.logout{
+	font-size: 18px;
+	color: rgb(40,155,213);
+	text-decoration: none;
+	
+}
+
+.flex-container {
+	display: flex;
+	display: inline;
+	float: right;
+	position: relative;
+	top: -50px;
+	right: 7%;
+	flex-direction: column;
+}
+
+.row {
+    display: flex;
+	
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 10px;
+	height: 1080px;
+     /* Should be removed. Only for demonstration */
+}
+
+.lcolumn {
+	color: white;
+}
+
+.full-report-button {
+	background-color: red;
+    border: none;
+    color: white;
+	border-radius: 8px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.new-project-button {
+	background-color: purple;
+    border: none;
+    color: white;
+	border-radius: 8px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.inlcolumn {
+	position: relative;
+	left: 10%;
+}
+
+.graph {
+	position: relative;
+	left: 10%
+}

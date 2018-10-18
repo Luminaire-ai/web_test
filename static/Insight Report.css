@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+.AI {
+	color: red;
+}
+sup{
+		font-size: 14px;
+		
+	}
+.navbar {
+    overflow: hidden;
+	height: 150px;
+    background-color: rgba(6, 2, 102, 1);
+    position: absolute; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+	color: white;
+	font-size: 30px;
+}
+
+.logout{
+	font-size: 18px;
+	color: rgb(40,155,213);
+	text-decoration: none;
+	
+}
+
+.flex-container {
+	display: flex;
+	display: inline;
+	float: right;
+	position: relative;
+	top: -50px;
+	right: 7%;
+	flex-direction: column;
+}
+.main {
+    margin-top: 150px; /* Add a top margin to avoid content overlay */
+	background-image: url("img/Login Page.jpg");
+	height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.column {
+    padding: 10px;
+	position: relative;
+	left: 2%;
+	height: 1080px;
+	color: white;
+	
+     /* Should be removed. Only for demonstration */
+}

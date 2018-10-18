@@ -1,0 +1,139 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+
+.AI {
+	color: red;
+}
+sup{
+		font-size: 14px;
+		
+	}
+.navbar {
+    overflow: hidden;
+	height: 150px;
+    background-color: rgba(6, 2, 102, 1);
+    position: absolute; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+	color: white;
+	font-size: 30px;
+}
+
+/* Links inside the navbar */
+
+
+/* Change background on mouse-over */
+
+/* Main content */
+
+body {
+	
+}
+
+.main {
+	position: relative;
+    top: 140px; /* Add a top margin to avoid content overlay */
+	background-image: url("img/Login Page.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logout{
+	font-size: 18px;
+	color: rgb(40,155,213);
+	text-decoration: none;
+	
+}
+
+.flex-container {
+	display: flex;
+	display: inline;
+	float: right;
+	position: relative;
+	top: -50px;
+	right: 7%;
+	flex-direction: column;
+}
+.column {
+	height: 1080px;
+     /* Should be removed. Only for demonstration */
+}
+
+
+.logo {
+	
+	
+}
+.info {
+	position: absolute;
+	left: 32%;
+	bottom: 29%;
+	max-height: 70%
+}
+
+
+
+.grid-container{
+	width: 800px;
+	height: 800px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: auto auto;
+	position: relative;
+	
+	top: 200px;
+}
+
+
+.grid-item {
+	color: white;
+	width: 400px;
+	height: 400px
+}
+.no_button{
+	background-color: red; /* Green */
+    border: none;
+    color: white;
+    padding: 3% 14%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	
+	
+	
+	
+}
+
+.yes_button{
+	background-color: green; /* Green */
+    border: none;
+    color: white;
+    padding: 3% 12%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	
+}	
+#skip {
+	background-color: purple; /* Green */
+    border: none;
+    color: white;
+    padding: 1% 4%;
+    text-align: center;
+    text-decoration: none;
+	font-size: 30px;
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+}
+
+
+.report{
+	color: white;
+	position: relative;
+	left: 5%;
+}

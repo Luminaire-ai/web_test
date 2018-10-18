@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+	{{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+<meta charset="UTF-8">
+<title>Cutie Tissue</title>
+<link href="{{ url_for('static', filename='Cutie Tissue.css') }}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>	
+<div class = "navbar">
+<br><br>
+&nbsp; &nbsp; &nbsp; &nbsp;LUMIN<span class = "AI">(AI)</span>RE<sup>TM</sup> &nbsp; &nbsp; &nbsp; &nbsp; 
+{{ moment(current_time).format('LLL') }} 
+	&nbsp; &nbsp; &nbsp; &nbsp; 
+	<img src = "{{ url_for('static', filename='img/u13.png') }}">
+	
+	<div class="flex-container">
+ 	<img src = "{{ url_for('static', filename='img/u10.jpg') }}" width = "75px">
+  	<div><a class = "logout" href = "{{ url_for('login') }}">LOG OUT</a></div>
+	</div>
+</div>	
+
+<div class = "main">
+	<br><br><br>
+			<div class="column">
+			<div class = "report">
+		<h1 style="font-size:36px" id = "head1"></h1>
+		<h1 style = "font-size:36px" id = "head2"></h1>
+				</div>
+
+		<div class = "grid-container">
+			<div class = "grid-item">
+			<img id = "img1" src = "{{ url_for('static', filename='img/Cutie Logos/0001.png') }}" width="70%">
+				<br>
+
+			<input type = "submit" class="no_button" id = "n1" onclick = "no_count(this.id)" value="NO">
+			<input type = "submit"  class="yes_button" id = "y1" onclick="yes_count(this.id)" value="YES">
+
+			</div>
+			<div class = "grid-item">
+				<img class ="logo" id = "img2" src = "{{ url_for('static', filename='img/Cutie Logos/0001.png') }}" width="70%">
+				<br>
+			<input type = "submit" class="no_button" id = "n2" onclick = "no_count(this.id)" value="NO"> 
+			<input type = "submit"  class="yes_button" id = "y2" onclick="yes_count(this.id)" value="YES">
+			</div>
+			<div class = "grid-item">
+				<img class ="logo" id = "img3" src = "{{ url_for('static', filename='img/Cutie Logos/0001.png') }}" width="70%">
+				<br>
+			<input type = "submit" class="no_button" id = "n3" onclick = "no_count(this.id)" value="NO"> 
+			<input type = "submit"  class="yes_button" id = "y3" onclick="yes_count(this.id)" value="YES">
+			</div>
+			<div class = "grid-item">
+			<img class ="logo" id = "img4" src = "{{ url_for('static', filename='img/Cutie Logos/0001.png') }}" width="70%">
+				<br>
+			<input type = "submit" class="no_button" id = "n4" onclick="no_count(this.id)" value="NO"> 
+			<input type = "submit"  class="yes_button" id = "y4" onclick="yes_count(this.id)" value="YES">
+			</div>
+		</div>
+
+		<input type = "submit" id = "skip" value="SKIP" onclick = "skip()">
+		<!--
+
+
+	-->
+
+
+		</div>
+		</div>
+
+	<script>
+	var state = false;
+	var yes_counter = 0;
+	var no_counter = 0;
+	var count = 0;
+	var img_no = 3;
+	var imgno = {{num_of_imgs}} + 1;
+	var random_numbers = [];
+	for (var i = 1; i < imgno; i++){
+		random_numbers.push(i);
+	}	
+
+	function yes_count(val){
+			yes_counter+=1;
+			img_no += 1;
+			count += 1;
+			if (img_no >= (imgno-2)) {
+				finisher(val)
+				return;
+			}
+
+			if (val[1] == 1){
+				img1.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+			} else if (val[1] == 2){
+				img2.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+			} else if (val[1] == 3){
+				img3.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+			} else if (val[1] == 4){
+				img4.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+			}
+
+	}
+		function no_count(val){
+			no_counter+=1;
+			img_no += 1;
+			count += 1;
+			console.log("count: " + count);
+			if (img_no >= (imgno-2)) {
+				finisher(val)
+				return;
+			}
+
+			if (val[1] == 1){
+				img1.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+			} else if (val[1] == 2){
+				img2.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+			} else if (val[1] == 3){
+				img3.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+			} else if (val[1] == 4){
+				img4.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+			}
+
+
+		}
+		function name_maker(img_number){
+			var no_of_digits = 4 - img_number.toString().length;
+			var leading_zeros = "0".repeat(no_of_digits);
+			var path_with_zeros = leading_zeros + img_number.toString();
+			return path_with_zeros;
+		}
+		function finisher(val){
+			if(count >= (imgno-1)){
+				console.log("running");
+			h11 = document.getElementById("head1");
+			h12 = document.getElementById("head2");
+			h11.innerHTML = "Yes: " + yes_counter;
+			h12.innerHTML = "No: " + no_counter;
+			var skip = document.getElementById("skip");
+			skip.style.display = 'none';
+			document.getElementById("img1").style.display = 'none'
+			document.getElementById("n1").style.display = 'none'
+			document.getElementById("y1").style.display = 'none'
+			document.getElementById("img2").style.display = 'none'
+			document.getElementById("n2").style.display = 'none'
+			document.getElementById("y2").style.display = 'none'
+			document.getElementById("img3").style.display = 'none'
+			document.getElementById("n3").style.display = 'none'
+			document.getElementById("y3").style.display = 'none'
+			document.getElementById("img4").style.display = 'none'
+			document.getElementById("n4").style.display = 'none'
+			document.getElementById("y4").style.display = 'none'
+			return;
+
+			}
+			if (val[1] == 1){
+				document.getElementById("img1").style.display = 'none'
+				document.getElementById("n1").style.display = 'none'
+				document.getElementById("y1").style.display = 'none'
+			} else if (val[1] == 2){
+				document.getElementById("img2").style.display = 'none'
+				document.getElementById("n2").style.display = 'none'
+				document.getElementById("y2").style.display = 'none'
+			} else if (val[1] == 3){
+				document.getElementById("img3").style.display = 'none'
+				document.getElementById("n3").style.display = 'none'
+				document.getElementById("y3").style.display = 'none'
+			} else if (val[1] == 4){
+				document.getElementById("img4").style.display = 'none'
+				document.getElementById("n4").style.display = 'none'
+				document.getElementById("y4").style.display = 'none'
+			}
+
+		}
+		function skip(){
+			
+			if (img_no<=(imgno-6)){
+				console.log("running1");
+				img_no += 1;
+				img1.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+				img_no += 1;
+				img2.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+				img_no += 1;
+				img3.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+				img_no += 1;
+				img4.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+					console.log("img_no: "+ img_no);	
+				count += 4;
+			} else if((img_no>(imgno-5)) && (img_no<(imgno-2))){
+				console.log("running2");
+				count += 4;
+				var img_no_const = img_no;
+				for (var i = 1; i <= (imgno - (img_no_const+2)); i++){
+					img_no += 1;
+					console.log("img_no: "+ img_no);
+					var img_id = "img" + i.toString();
+					document.getElementById(img_id).src = "/static/img/Cutie Logos/" + name_maker(random_numbers[img_no]) + ".png";
+				} 
+				for (var i = 4; i > (imgno - (img_no_const+2)); i--){
+					var img_id = "img" + i.toString();
+					var y_id = "y" + i.toString();
+					var n_id = "n" + i.toString();
+					document.getElementById(img_id).style.display = 'none';
+					document.getElementById(n_id).style.display = 'none';
+					document.getElementById(y_id).style.display = 'none';
+				}
+			} else if(img_no >= (imgno - 2)){
+					console.log("running3");
+					count+=4;
+					console.log("img_no: " + img_no);
+					finisher('v1');
+				}
+			}
+
+
+	function init(){
+		img1.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[0]) + ".png";
+		img2.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[1]) + ".png";
+		img3.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[2]) + ".png";
+		img4.src = "/static/img/Cutie Logos/" + name_maker(random_numbers[3]) + ".png";	
+	}
+
+	window.onload = init;
+
+		</script>	
+	
+</body>
+	
+	
+</html>

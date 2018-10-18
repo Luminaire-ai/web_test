@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	{{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+<meta charset="UTF-8">
+<title>Main Dashboard</title>
+<link href="{{ url_for('static', filename='Main Dashboard.css') }}" rel="stylesheet" type="text/css">
+<script src="{{ url_for('static', filename='Main Dashboard.js') }}"></script>
+</head>
+<body>
+	
+<div class = "navbar">
+<br><br>
+&nbsp; &nbsp; &nbsp; &nbsp;LUMIN<span class = "AI">(AI)</span>RE<sup>TM</sup> &nbsp; &nbsp; &nbsp; &nbsp; 
+{{ moment(current_time).format('LLL') }} 
+	&nbsp; &nbsp; &nbsp; &nbsp; 
+	<img src = "{{ url_for('static', filename='img/u13.png') }}">
+	
+	<div class="flex-container">
+ 	<div><img src = "{{ url_for('static', filename='img/u10.jpg') }}" width = "75px"></div>
+  	<div><a class = "logout" href = "{{ url_for('login') }}">LOG OUT</a></div>
+	</div>
+	
+
+</div>
+
+	
+	
+<div class = "main">
+
+	<div class="row">
+  <div class="column">
+    <br><br><br>
+	  <div class = "lcolumn">
+		  <div class = "inlcolumn">
+	  <h1 style="font-size:48">Good Afternoon <span style = "color: red;">{{ username }},</span></h1>
+		  <br><br>
+	  <h1 >Here are the current projects in your pipeline: </h1>
+		  
+	  <br><br>
+	  <select style = "font-size: 24px">
+ 	 <option value="Coca-cola Refresh Campaign">Coca-cola Refresh Campaign</option>
+  	<option value="Nike Run Free Campaign">Nike Run Free Campaign</option>
+  	<option value="Joe's Coffee Launch">Joe's Coffee Launch</option>
+</select>
+	  <br><br><br><br>
+		<form action="" method="post">
+	  <input type="submit" name="submit" class="full-report-button" value="ACCESS FULL REPORT" method = "post">
+			</form>
+	  <br><br><br><br><br><br><br><br> 
+		<form action="" method = "post">
+		 <input type="submit" name ="submit" class="new-project-button" value = "+ NEW PROJECT">
+		</form>
+		  </div>
+		  </div>
+  </div>
+  <div class="column">
+    <h1 style = "font-size:48; color: red">
+		Color performance (Blk/Wht) <br>
+		10% engagement (low)
+		</h1>
+	 <br><br>
+	  <h1 style = "font-size: 48; color: aqua">
+		  Recommendations: Yellow/Green (50%)* <br>
+		  Purple/Orange (35%)* <br>
+	      * predicted engagement 
+	</h1>
+	  <br><br><br>
+	  <div class = "graph">
+	  <img src = "{{ url_for('static', filename='img/u19.png') }}" width = "500px">
+		  </div>
+  </div>
+</div>
+	
+	
+</div>
+</body>
+</html>

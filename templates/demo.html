@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+{% if color %}
+<html>
+<head>
+	<title>ML Program</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<style>
+		.body {
+			 background-image: url('/static/img/Artificial-Intelligence.jpg');
+			 background-size: 108em 60em;
+			 background-repeat:no-repeat;
+			 /*filter: brightness(50%);*/
+			 object-fit: cover;
+			}
+			h1{
+				font-size:50px;
+				text-align: center;
+			}
+			h2{
+				font-size:36px;
+				text-align: center;
+			}
+
+	</style>
+</head>
+<body>
+
+	<div class="container col-8 body">
+		<br>
+	<h1 class="text-white mx-auto">Welcome to LUMIN(AI)RE</h1>
+        <br>
+		<br>
+		<br>
+			<h2 class="text-white">We recommend using {{color}} for {{hpcolor}}</h2>
+		<div class="col-4 mx-auto">
+
+			<!--<h1>{{color}}</h1>-->
+		<br>
+		<br>
+		<br>
+		<br>
+		<form method="POST">
+
+		<div class="form-group">
+		  <label for="Program1" class="text-white">Program:</label>
+		  <select class="form-control" name="hpcolor" id="Program1" required>
+		  	<option disabled="disabled" selected="selected">--Please Select your Program--</option>
+		    <option>Handphone Colour</option>
+		    <option>Handphone Colour</option>
+		    <option>Handphone Colour</option>
+		  </select>
+		</div>
+
+		<div class="form-group">
+		    <label for="Age1" class="text-white">Age:</label>
+		    <input type="number" class="form-control" name="Age" id="Age1" placeholder="--Please Enter your Age--" min = "0" required >
+		</div>
+
+		<label class="text-white">Gender:</label>
+		<div class="radio">
+		  <label class="text-white">
+		    <input type="radio" name="Gender" id="Male1" value="M" required>
+		    Male
+		  </label>
+		  <label class="text-white">
+		    <input type="radio" name="Gender" id="Female1" value="F" required>
+		    Female
+		  </label>
+		</div>
+
+		<div class="form-group">
+		  <label for="education1" class="text-white">Education:</label>
+		  <select class="form-control" name="Education" id="education1" required>
+		  	<option>--Please select your Education--</option>
+		    <option value="1">Nil</option>
+		    <option value="2">Primary</option>
+		    <option value="3">Secondary</option>
+              <option value="4">Tertiary</option>
+		  </select>
+		</div>
+
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+	<br>
+	<br>
+	<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br>
+		</div>
+		
+	</div>
+</body>
+</html>
+
+{% else %}
+
+<html>
+<head>
+	<title>ML Program</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<style>
+		.body {
+			 background-image: url('/static/img/Artificial-Intelligence.jpg');
+			 background-size: 108em 60em;
+			 background-repeat:no-repeat;
+			 /*filter: brightness(50%);*/
+			 object-fit: cover;
+			}
+			h1{
+				font-size:50px;
+				text-align: center;
+			}
+			h2{
+				font-size:36px;
+				text-align: center;
+			}
+	</style>
+</head>
+<body>
+
+	<div class="container col-8 body">
+		<br>
+	<h1 class="text-white mx-auto">Welcome to LUMIN(AI)RE</h1>
+		<div class="col-4 mx-auto">
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<form method="POST">
+
+		<div class="form-group">
+		  <label for="Program2" class="text-white">Program:</label>
+		  <select class="form-control" name="hpcolor" id="Program2">
+		  	<option>--Please Select your Program--</option>
+		    <option>Handphone Colour</option>
+		    <option>Handphone Colour</option>
+		    <option>Handphone Colour</option>
+		  </select>
+		</div>
+
+		<div class="form-group">
+		    <label for="Age2" class="text-white">Age:</label>
+		    <input type="number" class="form-control" name="Age" id="Age2" placeholder="--Please Enter your Age--" required>
+		</div>
+
+		<label class="text-white">Gender:</label>
+		<div class="radio">
+		  <label class="text-white">
+		    <input type="radio" name="Gender" id="Male2" value="M" required>
+		    Male
+		  </label>
+		  <label class="text-white">
+		    <input type="radio" name="Gender" id="Female2" value="F" required>
+		    Female
+		  </label>
+		</div>
+
+		<div class="form-group">
+		  <label for="education2" class="text-white">Education:</label>
+		  <select class="form-control" name="Education" id="education2" required>
+		  	<option>--Please select your Education--</option>
+		    <option value="1">Nil</option>
+		    <option value="2">Primary</option>
+		    <option value="3">Secondary</option>
+              <option value="4">Tertiary</option>
+		  </select>
+		</div>
+
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+	<br>
+	<br>
+	<br><br>
+	<br>
+	<br><br>
+	<br>
+	<br>
+		</div>
+
+	</div>
+</body>
+</html>
+
+{% endif %}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	{{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+<meta charset="UTF-8">
+<title>Insight Report - {{ campaign_name }} </title>
+<link href="{{ url_for('static', filename='Insight Report.css') }}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+	
+<div class = "navbar">
+<br><br>
+&nbsp; &nbsp; &nbsp; &nbsp;LUMIN<span class = "AI">(AI)</span>RE<sup>TM</sup> &nbsp; &nbsp; &nbsp; &nbsp; 
+{{ moment(current_time).format('LLL') }} 
+	&nbsp; &nbsp; &nbsp; &nbsp; 
+	<img src = "{{ url_for('static', filename='img/u13.png') }}">
+	
+	<div class="flex-container">
+ 	<div><img src = "{{ url_for('static', filename='img/u10.jpg') }}" width = "75px"></div>
+  	<div><a class = "logout" href = "{{ url_for('login') }}">LOG OUT</a></div>
+	</div>
+</div>
+	
+	<div class = "main">
+	<br><br><br>
+		<div class = "column">
+	<h1 style="font-size:36px">Insight Report - {{	 campaign_name	}} </h1>
+	<br>
+	<h1>Age: {{  age  }}</h1>
+			<br>
+	<h1>Gender: {{gender}} </h1>
+		<br>
+			<h1>Education: {{ education }} </h1>
+	<br>
+	<h1>Recommended {{ hphone }} is {{ color }}</h1>
+			</div>
+</div>
+</body>
+</html>

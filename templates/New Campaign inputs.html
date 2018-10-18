@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	{{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+<meta charset="UTF-8">
+<title>New Campaign Inputs</title>
+<link href="{{ url_for('static', filename='New Campaign Inputs.css') }}" rel="stylesheet" type="text/css">
+<script src = "{{ url_for('static', filename='New Campaign Inputs.js')}}"></script>
+</head>
+<body>
+	
+<div class = "navbar">
+<br><br>
+&nbsp; &nbsp; &nbsp; &nbsp;LUMIN<span class = "AI">(AI)</span>RE<sup>TM</sup> &nbsp; &nbsp; &nbsp; &nbsp; 
+{{ moment(current_time).format('LLL') }} 
+	&nbsp; &nbsp; &nbsp; &nbsp; 
+	<img src = "{{ url_for('static', filename='img/u13.png') }}">
+	
+	<div class="flex-container">
+ 	<div><img src = "{{ url_for('static', filename='img/u10.jpg') }}" width = "75px"></div>
+  	<div><a class = "logout" href = "{{ url_for('login') }}">LOG OUT</a></div>
+	</div>
+</div>
+	
+	<div class = "main">
+		<br><br><br>
+		<div class = "column">
+		<form action = "" method = "post" class="campaign_form">
+		<div class = "hphoneclr">
+		<h1 style = "font-size:  36px"> Set Campaign Name </h1>
+			
+		<input class = "campnamebox" type="text" name="CampaignName">
+		<br><br><br><br>
+		<div id="wrapper">
+    <div id="first">
+	<h1 style="font-size: 36px">Select Data Sources: </h1>
+		<label><input type="checkbox" class = "checkboxes" name="datasource" value="datasource"> Commerical Data<br></label><br>
+		<label><input type="checkbox" class = "checkboxes" name="datasource" value="datasource"> Live Data<br></label><br>
+		<label><input type="checkbox"  class = "checkboxes" name="datasource" value="datasource"> Brand Data<br></label><br>
+	</div>
+    <div id="second"><h4></h4>
+	<h1 style="font-size: 36px">Select Category: </h1>
+		<select name = "hpcolor" style = "font-size: 24px" id = "campaignselector">
+ 	 <option value="Handphone Colour">Handphone Colour</option>
+  	<option value="Premier Face Tissue">Premier Face Tissue</option>
+  	<option value="Cutie Tissue Campaign">Cutie Tissue Campaign</option>
+	<option value="Concert Campaign" disabled = "disabled">Concert Campaign</option>
+</select>
+			</div>
+</div>
+		<h1 style="font-size: 36px">Age: </h1>
+		<input type="number" class="form-control" name="Age" id="Age1" placeholder="Please Enter your Age" min = "1" required >	
+			
+		<br><br>
+		<h1 style="font-size: 36px">Gender:</h1>
+		<div class="radio">
+		  <input type="radio" name="Gender" value="M" checked> Male
+  		<input type="radio" name="Gender" value="F"> Female<br>
+		</div>
+			
+		<h1 style="font-size: 36px">Education: </h1>
+		<select style = "font-size: 24px" name = "Education" required>
+ 	 	<option value = "" disabled selected hidden>--Please select your Education--</option>
+		   <option value="1">Nil</option>
+		    <option value="2">Primary</option>
+		    <option value="3">Secondary</option>
+              <option value="4">Tertiary</option>
+	</select>	
+			</div>
+			<div class = "premiertissue" hidden>
+				<br>
+				<h1 style="font-size: 36px">Number of Images:</h1>
+				
+				<input type="number"  name="numofimages" id="numofimages" placeholder="How many images do you want to generate?" min = "1"  required >
+				</div>
+		<input class = "btn" type="submit" value="ANALYSE">
+
+		</form>
+		
+		
+	</div>
+</div>
+</body>
+</html>
